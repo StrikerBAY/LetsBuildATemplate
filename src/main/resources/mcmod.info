@@ -1,0 +1,16 @@
+[
+{
+  "modid": "LetsBuildATemplate",
+  "name": "Lets Build A Template",
+  "description": "Some useful templates.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["StrikerBAY"],
+  "credits": "The Forge and FML guys, for making FORGE :)",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
