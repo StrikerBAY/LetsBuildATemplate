@@ -9,8 +9,9 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import de.strikerbay.letsbuildatemplate.handler.ConfigurationHandler;
 import de.strikerbay.letsbuildatemplate.proxy.IProxy;
 import de.strikerbay.letsbuildatemplate.reference.Reference;
+import de.strikerbay.letsbuildatemplate.utility.LogHelper;
 
-@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME,version = Reference.MOD_VERSION)
+@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME,version = Reference.MOD_VERSION, guiFactory = Reference.GUI_FACTORY_CLASS)
 public class LetsBuildATemplate {
 
 
@@ -27,16 +28,21 @@ public class LetsBuildATemplate {
 
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
         FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
+        LogHelper.info("PRE ist durch .........................................");
 
     }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
 
+        LogHelper.info("INIT ist durch .........................................");
+
     }
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
+
+        LogHelper.info("POST ist durch .........................................");
 
     }
 }
