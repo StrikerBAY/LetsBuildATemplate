@@ -6,6 +6,7 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import de.strikerbay.letsbuildatemplate.client.handler.KeyInputEventHandler;
 import de.strikerbay.letsbuildatemplate.handler.ConfigurationHandler;
 import de.strikerbay.letsbuildatemplate.proxy.IProxy;
 import de.strikerbay.letsbuildatemplate.reference.Reference;
@@ -28,12 +29,19 @@ public class LetsBuildATemplate {
 
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
         FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
+
+        proxy.registerKeyBindings();
+
+
         LogHelper.info("PRE ist durch .........................................");
 
     }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
+
+        FMLCommonHandler.instance().bus().register(new KeyInputEventHandler());
+
 
         LogHelper.info("INIT ist durch .........................................");
 
